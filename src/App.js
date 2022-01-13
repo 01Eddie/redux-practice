@@ -9,6 +9,7 @@ import EstadoObsoletoPuedeOcurrirConLosClosures from './TodoSobreEstados/EstadoO
 import EstadoObsoletoPuedeOcurrirConLosClosuresSolucion from './TodoSobreEstados/EstadoObsoletoPuedeOcurrirConLosClosuresSolucion'
 
 import AppRedux from './ReduxBasicoEjemploTodo/AppRedux'
+import AppCounter from './UseSelectorVSConnect/AppCounter'
 
 const Estados = () => (<><h1>Lo que todo desarrollador de React debe saber sobre el estado</h1><UseStateObjs /><UseStateSinObjs /><UseOfUseMemo /><UseOfUseRef /><ActualizacionesDeEstadoDebenSerInmutables /><EstadoObsoletoPuedeOcurrirConLosClosures /><EstadoObsoletoPuedeOcurrirConLosClosuresSolucion /></>)
 
@@ -18,11 +19,13 @@ function App() {
       <div className="App">
         <Link to="/">Inicio</Link><br />
         <Link to="/estados">Lo que todo desarrollador de React debe saber sobre el estado</Link><br />
-        <Link to="/redux">Redux Nivel Basico ejemplo Todo</Link>
+        <Link to="/redux">Redux Nivel Basico ejemplo Todo</Link><br />
+        <Link to="/counter">Counter usando useSelect y connect</Link>
         <Routes>
           <Route element={<h1>Pagina de Inicio</h1>} path='/' />
           <Route element={<Estados />} path='/estados' />
           <Route element={<AppRedux />} path='/redux' />
+          <Route element={<AppCounter />} path='/counter' />
         </Routes>
       </div>
     </BrowserRouter>

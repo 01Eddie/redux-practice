@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-// import { Provider } from 'react-redux'
-// import { createStore } from 'redux'
-// import App from './App';
 
-// import todoApp from './ReduxBasicoEjemploTodo/Redux/reducers'
-import Root from './ReduxAvanzado/containers/Root';
+import App from './App';
+import { storeTodo, storeCounter } from './store';
 
-// let store = createStore(todoApp)
+// import Root from './ReduxAvanzado/containers/Root';
+
+const store = storeTodo || storeCounter // Esto se puede modificar ya que si en caso quieres ver Todo cambia a storeTodo sino storeCounter
 
 ReactDOM.render(
-  <Root />, 
+  <Provider store={store}>
+    <App />
+  </Provider>, 
   document.getElementById('root')
 );
 
